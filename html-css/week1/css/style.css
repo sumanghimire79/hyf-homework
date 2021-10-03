@@ -10,8 +10,6 @@ body {
     color: #111010;
 }
 
-
-/*
 header {
     height: 66px;
     margin-bottom: 10px;
@@ -23,10 +21,7 @@ header {
     min-height: 40px;
     border-radius: 5px;
 }
-*/
 
-
-/*
 #logo-name {
     position: absolute;
     z-index: 5;
@@ -81,11 +76,10 @@ nav ul li {
     font-size: 12px;
     margin-top: 10px;
 }
+
 nav ul li a {
     text-decoration: none;
 }
-
-*/
 
 li {
     list-style: none;
@@ -103,7 +97,6 @@ main {
 .about-me {
     display: inline-block;
     grid-column: 1/8;
-    /* background-color: #38A3A5;*/
     background: linear-gradient(to right, #31f19e, #80ED99);
     min-height: 100px;
     padding: 15px;
@@ -153,16 +146,18 @@ main {
 
 .education {
     grid-column: 1/5;
-    /* background-color: #38A3A5;*/
-    background: linear-gradient(to right, #31f19e, #80ED99);
-    min-height: 100px;
-    border-radius: 15px;
-    padding: 15px;
 }
 
 .work-experience {
     grid-column: 5/10;
-    /*background-color: #80ED99;*/
+}
+
+
+/* .exducat is the utility class in both .work-experience and .education  . 
+utility class is used to style bothe of these class. 
+*/
+
+.exeducat {
     background: linear-gradient(to right, #31f19e, #80ED99);
     min-height: 100px;
     border-radius: 15px;
