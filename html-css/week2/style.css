@@ -1,0 +1,177 @@
+body {
+    margin: 0 5%;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+.site-title,
+nav {
+    margin-left: 5%;
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+    align-items: left;
+    padding-left: 0%;
+}
+
+header li {
+    margin-right: 10px;
+}
+
+.main-image {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 5%;
+}
+
+.left-section-article-1,
+.left-section-article-2 {
+    width: 30%;
+    margin: 1%;
+}
+
+.right-section-article-1,
+.right-section-article-2 {
+    width: 60%;
+    margin: 1%;
+}
+
+.logotypes-on-the-web {
+    width: 100px;
+}
+
+
+/*hides the button in bigger screen*/
+
+.logotypes-icon-button {
+    visibility: hidden;
+}
+
+footer {
+    background-color: rgb(4, 0, 255);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 30px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+footer a,
+footer a:visited {
+    color: white;
+}
+
+
+/* sets the order of the article for bigger screen*/
+
+.right-section-article-1 {
+    order: 2;
+}
+
+.left-section-article-1 {
+    order: 1;
+}
+
+.left-section-article-2 {
+    order: 3;
+}
+
+.right-section-article-2 {
+    order: 4;
+}
+
+
+/* **********************************************************************
+*************media* for ******small/mobile****** screen**************** */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #D5D8DC;
+    }
+    header {
+        background-color: #808B96;
+        display: flex;
+        padding: 0 30px;
+    }
+    header ul {
+        display: flex;
+        list-style-type: none;
+        align-items: left;
+        margin-left: 0px;
+        flex-direction: column;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 90%;
+        background-color: #EAECEE;
+        flex-wrap: wrap;
+        margin: 0px 30px;
+    }
+    footer {
+        background-color: #808B96;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin-bottom: 0%;
+    }
+    footer ul {
+        list-style-type: none;
+        padding: 0px;
+    }
+    footer section:nth-child(1),
+    footer section:nth-child(2),
+    footer section:nth-child(3) {
+        width: 90%;
+    }
+    /* hides the footer navigation in mobile/small screen*/
+    #footer-navigation {
+        visibility: hidden;
+    }
+    /*the following sets the priority or order of the content for mobile/small screen*/
+    .right-section-article-1 {
+        order: 1;
+    }
+    .left-section-article-1 {
+        order: 2;
+    }
+    .left-section-article-2 {
+        order: 3;
+    }
+    .right-section-article-2 {
+        order: 4;
+    }
+    .left-section-article-1,
+    .left-section-article-2,
+    .right-section-article-1,
+    .right-section-article-2 {
+        width: 100%;
+    }
+    /* shows the button for only small screen which was set to invisible for bigger screen*/
+    .logotypes-icon-button {
+        visibility: visible;
+    }
+}
