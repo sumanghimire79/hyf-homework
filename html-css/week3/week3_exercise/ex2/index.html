@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise 2</title>
+</head>
+
+<body>
+    <!-- Write html here -->
+    <h1>Order summary</h1>
+    <section class="top">
+
+
+
+        <section class="soudfa">
+            <p>Soudfa 3 months</p>
+            <p>$35/month</p>
+        </section>
+        <section class="total">
+            <p>total</p>
+            <p>100</p>
+        </section>
+
+    </section>
+    <form class="form" action=" " method=" ">
+        <h3>Payment method</h3>
+        <div class="card ">
+            <div class="card-wrapper ">
+                <label class="card-wrapper-label" for="credit ">
+                    <input type="radio " id="credit " name="payment" class="input-radio " value="credit ">
+                        <img class= "card-logo1" src="images/visacard.png"  alt="credit/debit">
+                        <figcaption>Card</figcaption>
+                    </label>
+            </div>
+            <!-- in these two radio input both of the input have the same name="payment" 
+    so it helps to select either of these button-->
+            <div class="card-wrapper ">
+                <label for="paypal ">
+                     <input type="radio " id="paypal " name="payment" class="input-radio " value="paypal ">
+                         <img class= "card-logo2" src="images/paypal.png"  alt="Paypal">
+                         <figcaption>Paypal</figcaption>
+                        </label>
+            </div>
+        </div>
+
+        <h3>Card Info</h3>
+        <section class="cardnumber">
+            <div class="card-info">
+                <label for="number ">Card number</label>
+                <input type="number " id="number " name="number " placeholder="1234 3434 3437 8888 ">
+            </div>
+            <div class="card-info">
+                <label for="date ">Expiry Date  </label>
+                <input type="month " id="date " name="date ">
+            </div>
+            <div class="card-info">
+                <label for="security ">Security code</label>
+                <input type="number " id="security " name="security " placeholder="CVC ">
+            </div>
+        </section>
+        <section class="bottom">
+            <button type="submit" class="submit">Buy Now</button> <br><br>
+            <a href="# ">need help!</a>
+        </section>
+
+    </form>
+</body>
+
+</html>
