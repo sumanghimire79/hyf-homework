@@ -1,0 +1,14 @@
+.than-you {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressbar-inner4 {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 100%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,58 @@
+.progressbar-inner3 {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 75%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+.item-interested {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    align-items: center;
+    width: 60%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+}
+
+.interested label,
+.interested input {
+    height: 30px;
+}
+
+.interested {
+    display: flex;
+    justify-content: end;
+    gap: 15%;
+    width: 10em;
+    align-items: center;
+    align-content: center;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 90%;
+    margin: 2%;
+}
+
+.choose-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: end;
+}
+
+.choose-images img {
+    width: 6em;
+    height: 5em;
+    border: 2px solid rgb(101, 14, 189);
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: rgb(253, 185, 185);
+    }
+}

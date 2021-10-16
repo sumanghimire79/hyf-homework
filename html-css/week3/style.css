@@ -1,0 +1,104 @@
+/*******************************************************
+**********index1****************************************/
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin: 2%;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    background-color: gray;
+    height: 5rem;
+    width: 5rem;
+}
+
+.nav {
+    background-color: gray;
+    height: 3rem;
+    width: 40%;
+}
+
+.progressbar-outer {
+    height: 2rem;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.progressbar-inner {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 2%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+.top-form-section {
+    margin: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.full-name,
+.country,
+.full-address {
+    padding: 1rem;
+    margin-left: 3rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-left: 5rem;
+}
+
+.next-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.next-button {
+    background-color: rgb(128, 128, 128);
+    width: 10rem;
+    height: 4rem;
+}
+
+.than-you {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*******************************************************
+**********media quiries****************************************/
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: rgb(253, 185, 185);
+    }
+    .top-form-section {
+        margin: 1rem 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .full-name {
+        display: flex;
+        flex-direction: column;
+    }
+    .full-address {
+        display: flex;
+        flex-direction: column;
+    }
+}

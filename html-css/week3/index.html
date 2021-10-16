@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Week 3 homework Suman Ghimire</title>
+</head>
+
+<body>
+    <header>
+        <section class="logo"> Logo</section>
+        <nav class="nav"> navigation</nav>
+    </header>
+    <main>
+        <h1> Sign up to yourcustomtailor.com</h1>
+        <p>we cant wait to help you improve your life style and gain the attention from people around you !</p>
+        <p> Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the bes offers that match yur preferences and style. Every week we will send you a hand-picke selection-we just need to know a few details about your
+            first...
+        </p>
+        <h2>Step 1/4 - Tell us who you are?</h2>
+        <section>
+            <div class="progressbar-outer">
+                <div class="progressbar-inner"> 0%</div>
+            </div>
+            <p> Nice to meet you . Lets spend a minute to get to know each other? Please enter the following:</p>
+        </section>
+        <form>
+            <section class="top-form-section">
+                <section class="full-name">
+                    <label for="firstname"> First name*</label> <input type="text" name="firstname" id="firstname" required>
+                    <label for="lastname"> Last name*</label> <input type="text" name="lastname" id="lastname" required>
+                </section>
+                <section class="country">
+                    <label for="country" id="label-country">Country*</label>
+                    <select name="country" id="country">
+                <option value="nepal">Nepal</option>
+                <option value="denmark">Denmar</option>
+                </select>
+                </section>
+
+                <!--
+                     *** regular expressin for address explanation**
+                     /
+                        ^(?:[A-zæøåÆØÅ]{2,40}\.?\s)+(?:[0-9]){1,5}\w?(?:\s.*)?$
+                    /
+                    https://regex101.com/r/Okbsrz/6
+                -->
+                <section class="full-address">
+                    <label for="address">Street address*</label> <input type="adress" name="address" id="address" pattern="^(?:[A-zæøåÆØÅ]{2,40}\.?\s)+(?:[0-9]){1,5}\w?(?:\s.*)?$" required>
+                    <label for="post-code"> post code</label> <input type="text" name="post-code" id="post-code" pattern="[0-9]{3,4}" required>
+                    < </section>
+                </section>
+                <section class="profile">
+                    <label for="profile-description"> Profile description</label> <textarea name="profile-description" id="profile-description" cols="30" rows="10" placeholder="please provide a short description of yourself to be desplayed on our social community pages."></textarea>
+                </section>
+                <p>use the same address for billing and shipping? Uncheck below to fill out a separate shiping address.</p>
+                <section class="next-section">
+                    <section><label for="shipping-address"> Shipping address</label> <input type="checkbox" name="shipping-address" id="shipping-address"></section>
+                    <button class="next-button" formaction="index2.html"> Next step</button>
+                </section>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
