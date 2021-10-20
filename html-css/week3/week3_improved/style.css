@@ -1,0 +1,221 @@
+/*******************************************************
+**********index1****************************************/
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin: 2%;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    background-color: gray;
+    height: 5rem;
+    width: 5rem;
+}
+
+.nav {
+    background-color: gray;
+    height: 3rem;
+    width: 40%;
+}
+
+.progressbar-outer {
+    height: 2rem;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.progressbar-inner {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 2%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+form {
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.top-form-section {
+    margin: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.full-name,
+.country,
+.full-address {
+    padding: 1rem;
+    margin-left: 3rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-left: 5rem;
+}
+
+.next-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.next-button {
+    background-color: rgb(128, 128, 128);
+    width: 10rem;
+    height: 4rem;
+}
+
+.than-you {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*******************************************************
+********* index-2**************************************/
+
+.progressbar-inner2 {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 33%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+.news-latter {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.next-section {
+    margin-top: 5rem;
+}
+
+.name,
+.password {
+    display: flex;
+}
+
+
+/*******************************************************
+**********index-3**************************************/
+
+.progressbar-inner3 {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 75%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+.item-interested {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    align-items: center;
+    width: 60%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+}
+
+.interested label,
+.interested input {
+    height: 30px;
+}
+
+.interested {
+    display: flex;
+    justify-content: end;
+    gap: 15%;
+    width: 10em;
+    align-items: center;
+    align-content: center;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 90%;
+    margin: 2%;
+}
+
+.choose-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: end;
+}
+
+.choose-images img {
+    width: 6em;
+    height: 5em;
+    border: 2px solid rgb(101, 14, 189);
+}
+
+
+/*******************************************************
+**********index-4**************************************/
+
+.than-you {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressbar-inner4 {
+    background-color: rgb(136, 136, 136);
+    height: 2rem;
+    width: 100%;
+    text-align: right;
+    color: rgb(255, 255, 255);
+}
+
+
+/*******************************************************
+**********media quiries**index-1***********************/
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: rgb(253, 185, 185);
+    }
+    .top-form-section {
+        margin: 1rem 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .full-name {
+        display: flex;
+        flex-direction: column;
+    }
+    .full-address {
+        display: flex;
+        flex-direction: column;
+    }
+    /******media quiries** index-2******/
+    .name,
+    .password,
+    .news-latter {
+        display: flex;
+        flex-direction: column;
+    }
+}
