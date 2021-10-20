@@ -1,0 +1,9 @@
+countries i visited
+
+denmark
+nepal
+india
+norway
+sweden
+germany
+canada (this the new country i have just visited and is added to the list)
