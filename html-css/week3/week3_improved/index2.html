@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Week 3 homework Suman Ghimire</title>
+</head>
+
+<body>
+    <header>
+        <section class="logo"> Logo</section>
+        <nav class="nav"> navigation</nav>
+    </header>
+    <main>
+        <h1> Sign up to yourcustomtailor.com</h1>
+        <h2>Step 2/4 - how can we reach you?</h2>
+        <section>
+            <div class="progressbar-outer">
+                <div class="progressbar-inner2">50%</div>
+            </div>
+            <p> we will probably need to stay in touch somehow. Let us know how we can reach you?</p>
+        </section>
+        <form action="index3.html" method="get">
+            <section class="name">
+                <label for="email"> Email *</label> <input type="email" name="email" id="email" required>
+                <label for="phone"> Phone*</label> <input type="phone" name="phone" id="phone" required>
+            </section>
+            <section class="password">
+                <label for="password" class="tooltip"> Password* </label>
+                <input type="password" name="password" id="password" title=" Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                <label for="password"> Re-enter Password*</label> <input type="password" name="password" id="repassword" title="it does not matches the same password ??!" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            </section>
+            <p>i want to sign up for the newslatter.</p>
+            <section class="news-latter">
+                <label for="news-letter">Weekly news* <input type="radio" name="news-letter" id="weekly-news"> </label>
+                <label for="news-letter">Monthly news* <input type="radio" name="news-letter" id="monthly-news"></label>
+                <label for="news-letter">Don't send me news <input type="radio" name="news-letter" id="dont-send-news"></label>
+            </section>
+            <section class="next-section">
+                <section></section>
+                <a href="index3.html"> <button class="next-button"> Next step</button>
+                </a>
+            </section>
+        </form>
+    </main>
+
+</body </html>
