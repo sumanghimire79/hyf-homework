@@ -1,18 +1,19 @@
+/* Suman Ghimire javascript w1 Housey pricey (A house price estimator) */
 
 // peaters house measurement 
 let houseWidthInM2 = 8;
 let houseDepthInM2 = 10;
-/* Suman Ghimire javascript w1 (Housey pricey) */
 let houseHeighthInM2 = 10;
 let gardenSizeInM2 = 100;
 const  normalPriceOfPeter = 2500000; 
 let volumeInMeters = houseWidthInM2 * houseDepthInM2 * houseHeighthInM2;
 
 let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
-let paidMore = housePrice - normalPriceOfPeter;
-let paidLess = normalPriceOfPeter - housePrice;
+//Math.abs()
+let paidMore = Math.abs(housePrice - normalPriceOfPeter);
+let paidLess = Math.abs(normalPriceOfPeter - housePrice);
 
-console.log(" * The calculated price of the Peter's is "+housePrice + " !!!");
+console.log(" * The calculated price of the Peter's is "+ housePrice + " !!!");
 
 if (housePrice == normalPriceOfPeter){
     console.log ("Peter paid " + normalPriceOfPeter + ". That means he paid the correct price of the house." );
@@ -39,8 +40,9 @@ volumeInMeters = houseWidthInM2 * houseDepthInM2 * houseHeighthInM2;
 housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 console.log(housePrice);
 
-paidMore = housePrice - normalPriceOfJulia;
-paidLess = normalPriceOfJulia - housePrice;
+// Math.abs()
+paidMore = Math.abs(housePrice - normalPriceOfJulia);
+paidLess = Math.abs( normalPriceOfJulia - housePrice);
 
 console.log(" ** The calculated price of the Julia's is "+housePrice + " !!!");
 
