@@ -22,6 +22,7 @@ function getNumberOfStudents() {
   // You write code here
  let numberOfStudents = class07Students.length;
  console.log("The current number of Students is "+  numberOfStudents);
+ return numberOfStudents;
 
 }
 
