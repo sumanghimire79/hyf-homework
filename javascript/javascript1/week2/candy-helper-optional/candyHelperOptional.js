@@ -41,7 +41,7 @@ function addCandy(candyType, weight) {
             price = weight * 0.03;
             break;
         default:
-            price = "Ask  for price"
+            price = " price not set";
             break;
     }
     boughtCandyPrices.push(candyType , price);
@@ -57,3 +57,14 @@ addCandy("Chewing-gum",100);
 console.log(boughtCandyPrices);
 addCandy("gum",100);
 console.log(boughtCandyPrices);
+
+/* 
+const boughtCandy = [];
+
+const amountToSpend =  Math.random() * 100;
+
+function canBuyMoreCandy(){
+
+    while ( ){}
+
+} */
