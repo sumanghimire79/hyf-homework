@@ -1,0 +1,33 @@
+.outerSec{
+    background-color:  #808080;
+    display: flex;
+    flex-direction: column;
+   
+}
+.innerSec{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+}
+.displayRadioinput1{
+    color: white;
+}
+.displayClick1{
+color: rgb(0, 247, 255);
+}
+
+.displayMouseover1{
+color: yellow;
+
+}
+
+#oninput{
+    background-color: white;
+}
+#mouseover{
+    background-color:yellow ;
+}
+#click{
+   background: rgb(0, 247, 255);
+}
