@@ -1,0 +1,51 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #F9FBFD;
+}
+
+
+
+body, h1, h2 {
+    margin: 0;
+}
+
+main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
+    background-color: rgb(240, 235, 224);
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    
+}
+nav ul li{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    margin-right: 1rem;
+    
+    
+}
+main{
+    margin: 0.5rem 2rem;
+    padding: 1rem 2.5rem;
+    background-color: rgb(240, 235, 224);
+
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(240, 235, 224);
+
+}
+
+
