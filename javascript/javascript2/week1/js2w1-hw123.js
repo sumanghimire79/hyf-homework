@@ -1,4 +1,6 @@
 // 1  Find the shortest word// 
+
+/* 
 console.log('*HW1: Find the shortest word*');
 
 const danishWords = ["bil", "plante", "kaffe", "bog", "ø", "planetarium"];
@@ -61,5 +63,87 @@ myButton.addEventListener('click', function () {
     }
 });
 
+ */
+
+// vahab's code 
+
+// danish special letterrs are 'æ', 'å' and  'ø'
+
+const danishString = "Blå grød med røde bær";
+function findDanishLetter(danishString2) {
+let letters = danishString2.split('');
+const å = letters.filter(letter => letter === 'å');
+const æ = letters.filter(letter => letter === 'æ');
+const ø = letters.filter(letter => letter === 'ø');
+const result = ' Total danish letter found : ' + (å.length + ø.length + æ.length) + ' where, \n å: ' +å.length +' \n æ: '+ æ.length + '  \n ø: '+ ø.length;
+console.log(result);
+
+if (å.length === 0 && ø.length === 0 && æ.length === 0){
+    console.log('it does not include danish letter');
+}
+
+}
+findDanishLetter(danishString)
+
+               
+const danishString2 = "Blå grød med røde bær";
+var danishLetter = ['æ', 'å', 'ø']
+function findDanishLetter(danishString2) {
+    let letters = danishString2.split('');
+    console.log(letters);
+    let foundLetter = [];
+    console.log(foundLetter);
+    let ø = 0;
+    let å = 0;
+    let æ = 0;
+    for (i = 0; i < letters.length; i++) {
+        let singleLetter = danishString2[i];
+        if (singleLetter === 'å') {
+            foundLetter.push(singleLetter);
+            å += 1;
+        } else if (singleLetter === 'æ') {
+            foundLetter.push(singleLetter);
+            æ += 1;
+        } else if (singleLetter === 'ø'){
+            ø += 1;
+            foundLetter.push(singleLetter);  }         
+    }
+    console.log('Found danish letters: ' +foundLetter);
+
+    console.log( 'total danish Letterrs: '+ foundLetter.length + ' where, å:'+ å + ' ø: '+ ø + ' æ:'+ æ );
+if (å === 0 && ø === 0 && æ === 0){
+    console.log('it does not include danish letter');
+}
+
+// how to use reduce here to count the total item in the array??
+const total = foundLetter.reduce((total, letter) => total+letter);
+console.log(total);
 
 
+// let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+
+let countedNames = letters.reduce(function (allLetters, letter,index) {
+//   if (letter in allLetters) {
+//     allLetters[letter]++
+//   }
+//   else {
+//     allLetters[letter] = 1
+//   }
+//   return allLetters
+
+allLetters[index] = letter
+return allLetters
+
+
+
+}, {})
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+console.log('counted names is : '+ countedNames);
+
+
+
+
+}
+findDanishLetter(danishString2) 

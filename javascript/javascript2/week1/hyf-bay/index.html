@@ -11,11 +11,22 @@
 <body>
     <h1>hyfBay - get the okay'est products here</h1>
     <main>
+<input type="text" name="text" id="ProductNameSearchInput" placeholder="Search product by name">
+<input type="text" name="text" id="ProductPricesearchInput" placeholder="Set max price">
+<br>
+<hr>
+name <input type="radio" name="sort" onclick="sort()" id="namesort" >
+price <input type="radio" name="sort" onclick="sort()" id="pricesort">
+rating <input type="radio" name="sort" onclick="sort()" id="ratingsort">
+
+
         <ul>
         </ul>
     </main>
     <script src="hyfBayHelpers.js"></script>
     <script src="main.js"></script>
+    
+
 </body>
 
 </html>
