@@ -23,11 +23,18 @@ margin: 5% 20%;
   align-content: space-between;
 }
 
+#timeUpX{
+  text-align: center;
+  background-color: red;
+  color: aliceblue;
+}
 
 #PressL,
 #PressS {
-  display: flex;
+  /* display: flex;  */
+  position: relative;
   width: 6rem;
+  height: 6rem;
   text-align: center;
   border-radius: 50%;
   background-color: rgb(223, 223, 223);
@@ -38,7 +45,7 @@ margin: 5% 20%;
 #countS {
  
   font-size:24 ;
-  display: flex;
+  /* display: flex; */
   color: rgb(233, 12, 12);
   align-items: center;
   /* z-index: 10; */
@@ -46,7 +53,23 @@ margin: 5% 20%;
  
 }
 
+#timeUp{
+  color: red;
+}
 
+#timeUpR, #timeUpNotPressed{
+  color: red;
+background-color: white;
+}
+
+#timeUpNotPressed{
+  background-color: red;
+  color: white;
+}
+
+#inputNumber{
+  margin: 1rem 0;
+}
 @media screen and (max-width: 600px) {
   body {
     background-color: olive;

@@ -26,7 +26,8 @@
             sumL++;
             countL.textContent = sumL
           } else {
-            document.querySelector('#timeUp').innerHTML = ` key "${letter}" Pressed , instead press ${'s'} , ${'l'} key to play the game !`;
+            document.querySelector('#timeUpX').innerHTML = ` you pressed "${letter}" but , only ${'s'} , ${'l'} are counted !`;
+        
           }
         }
 
@@ -35,18 +36,18 @@
         }, Number(inputNumber.value) * 1000);
 
         setTimeout(function () {
-          if ((sumS === 0) && sumL === 0) {
-           
-            document.querySelector('#timeUp').innerHTML = `Not pressed S or L key. Time is out`;
-          } else if (sumS > sumL) {
+          if (sumL === 0 && sumS === 0) {
+            document.querySelector('#timeUpNotPressed').innerHTML = `Not pressed S or L key`;
+          }else if (sumS > sumL) {
             countS.innerHTML = `⛳ ${sumS}` ;
-            document.querySelector('#timeUp').innerHTML = `S wins with ${sumS - sumL} point`;
+            document.querySelector('#timeUpR').innerHTML = `S wins with ${sumS - sumL} point`;
           } else if (sumS < sumL) {
             countL.innerHTML = `⛳ ${sumL}` ;
-            document.querySelector('#timeUp').innerHTML = `L wins with ${sumL - sumS} point`;
+            document.querySelector('#timeUpR').innerHTML = `L wins with ${sumL - sumS} point`;
           } else if (sumS === sumL) {
-            document.querySelector('#timeUp').innerHTML = `Same score`;
+            document.querySelector('#timeUpR').innerHTML = `Same score`;
           }
+          document.querySelector('#timeUpX').innerHTML= '';
           startGameButton.innerHTML= 'Re-Play Game';
           document.removeEventListener('keypress', logKey)
         }, Number(inputNumber.value) * 1000);
@@ -58,11 +59,14 @@
             document.getElementById("countdown").innerHTML = `Time Finished`;
           } else {
             document.getElementById("countdown").innerHTML = timeleft + `seconds remaining`;
+           
           }
           timeleft -= 1;
+         
         }, 1000);
 
         startGameButton.addEventListener('click',function(){
+          
           window.location.reload(true)
           startGameButton.addEventListener('click', startGame);
           }

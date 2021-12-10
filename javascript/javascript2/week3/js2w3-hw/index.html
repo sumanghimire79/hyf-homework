@@ -12,38 +12,41 @@
 <body>
   <button id='buttonQ3'>Q3 button (after 5 sec) </button>
   <hr>
-
   <button id="get-location"> Q5. Get My Location
   </button>
   <a id="locationlink" target="_blank"></a>
-
   <br>
   <hr>
-  <button id="Q8-doubleClass">Q8. Double Click Count</button><p id="doubleClass"></p>
+  <button id="Q8-doubleClass">Q8. Double Click Count</button>
+  <p id="doubleClass"></p>
 
   <section id="parentSection">
     <h1>Fastest Presser</h1>
 
+    <p id="timeUpR"></p>
 
-    <input type="number" name="" id="inputNumber" placeholder="set seconds">
-    <br>
-    <button id="startGameButton">Start Game</button>
-<br>
-<div id="countdown"></div>
-    <p id="timeUp"></p>
     <section id="press">
 
       <div id="PressS">
         <p id="countS"></p>
-        <h3 class="count">Press <br> S</h3>
+        <p class="count"> 'S' <br> score </p>
       </div>
 
       <div id="PressL">
         <p id="countL"></p>
-        <h3 class="count">Press <br> L</h3>
+        <p class="count"> 'L' <br> score</p>
       </div>
 
     </section>
+
+    <input type="number" name="" id="inputNumber" placeholder="set seconds">
+    <button id="startGameButton">Start Game</button>
+    
+    <div id="countdown"></div>
+    <p id="timeUp"></p>
+    <p id="timeUpNotPressed"></p>
+    <p id="timeUpX"></p>
+
   </section>
 
   <script src="js2w3hw-warm-up.js"></script>
