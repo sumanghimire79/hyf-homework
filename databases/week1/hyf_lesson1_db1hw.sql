@@ -37,7 +37,7 @@ SELECT
 from
   task
 ORDER BY
-  created ASC;
+  created DESC;
 -- 6. Get the single most recently created task
 SELECT
   title,
