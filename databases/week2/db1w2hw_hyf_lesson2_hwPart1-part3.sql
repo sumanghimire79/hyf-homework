@@ -47,12 +47,18 @@ SET
 WHERE
   id = 36;
 -- Change a task status
+  use hyf_lesson2;
 UPDATE
   task
 SET
-  status_id = 3
+  status_id = 3 -- status.name = 'Done';
+  -- should we JOIN here but how? i tried but did not work ?
 WHERE
   id = 36;
+SELECT
+  *
+FROM
+  task;
 -- Mark a task as complete
 DELETE FROM
   task
