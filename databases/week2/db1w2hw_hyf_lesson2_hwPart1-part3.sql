@@ -51,10 +51,17 @@ WHERE
 UPDATE
   task
 SET
-  status_id = 3 -- status.name = 'Done';
-  -- should we JOIN here but how? i tried but did not work ?
+  -- status_id = 3
+  status_id = (
+    SELECT
+      status.id
+    FROM
+      status
+    WHERE
+      status.name LIKE '%Done' -- status.name = 'Done'
+  )
 WHERE
-  id = 36;
+  id = 35;
 SELECT
   *
 FROM

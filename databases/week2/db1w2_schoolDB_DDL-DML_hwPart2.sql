@@ -33,8 +33,6 @@ ALTER TABLE
   Class RENAME COLUMN status1 TO status;
 -- ALTER TABLE Class ADD status VARCHAR(255);
   -- delete column from the table
-ALTER table
-  Class DROP COLUMN status;
 SELECT
   *
 FROM

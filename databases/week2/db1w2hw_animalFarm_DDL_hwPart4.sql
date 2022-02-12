@@ -41,7 +41,7 @@ CREATE TABLE `customer` (
   `address` VARCHAR(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 CREATE TABLE `sales` (
-  `quantity` VARCHAR(10) NOT NULL,
+  `quantity` INT(10) NOT NULL,
   `customer_id` INT(10) unsigned NOT NULL,
   `animal_id` INT(10) unsigned NOT NULL,
   PRIMARY KEY(`customer_id`, `animal_id`),
