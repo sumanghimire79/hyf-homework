@@ -1,0 +1,28 @@
+create databasee 
+er diagram 
+dbd database desiner
+
+main important is to find out candidate key so that primary key can be cosen
+
+1nf : first normal form (atomicity)
+2nf : second normal form (compound key and partial dependency)
+3nf : third normal form (transitive depenency)
+4nf/BNF : fourth normal form (multiple value)
+
+tpes of keys:
+
+super key
+candidate key
+primary key 
+alterate key
+foreign key
+composit key/compound key
+surrogate key
+
+*prime attribute and non prime attributes
+
+ddl data definition language : defining database create table, columns, insert info
+dml data manipulation language : query select select * from table
+
+dcl data control language : who can do what / defining roles
+tcl tranction language : who did what / records 
