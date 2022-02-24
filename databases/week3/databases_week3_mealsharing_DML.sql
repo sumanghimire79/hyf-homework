@@ -36,9 +36,9 @@ WHERE
 UPDATE
   meal
 SET
-  meal.description = 'traditional spicy pizza'
+  meal.description = 'traditional Nepali spicy pizza'
 WHERE
-  meal.title LIKE '%pizza';
+  meal.id = 2;
 -- Delete a meal with any id, fx 1
 DELETE FROM
   meal
@@ -47,7 +47,6 @@ WHERE
 -- Quries to write on Reservation table
   -- Get all reservations
 select
-  meal.title as Food,
   reservation.number_of_guests as 'Total Guests',
   meal.when as 'Date of Event'
 from
@@ -130,9 +129,9 @@ where
 UPDATE
   review
 SET
-  stars = 5
+  stars = 15
 WHERE
-  meal_id = 2;
+  review.id = 2;
 -- Delete a review with any id, fx 1
 DELETE FROM
   review
@@ -146,18 +145,30 @@ SELECT
 from
   meal
 WHERE
-  price = 90;
+  price < 90;
 -- Get meals that still has available reservations
+  -- SELECT
+  --   meal.title,
+  --   max_reservations,
+  --   number_of_guests,(max_reservations - number_of_guests) as 'Available Reservations'
+  -- from
+  --   meal
+  --   JOIN reservation on meal.id = reservation.meal_id
+  -- WHERE
+  --   reservation.number_of_guests < meal.max_reservations;
+  -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
+  -----------------does not work--------------------------
 SELECT
   meal.title,
-  max_reservations,
-  number_of_guests,(max_reservations - number_of_guests) as 'Available Reservations'
-from
+  meal.max_reservations,
+  reservation.number_of_guests
+FROM
   meal
-  JOIN reservation on meal.id = reservation.meal_id
-WHERE
-  reservation.number_of_guests < meal.max_reservations;
--- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
+  JOIN reservation ON meal.id = reservation.meal_id
+GROUP BY
+  meal.title
+HAVING
+  SUM(reservation.number_of_guests) < meal.max_reservations;
 INSERT INTO
   meal(
     `title`,
@@ -190,16 +201,14 @@ SELECT
 FROM
   meal
 WHERE
-  created_date > '2022-02-14' & & created_date < '2022-02-16';
+  -- created_date > '2022-02-14' AND created_date < '2022-02-16';
+  created_date BETWEEN '2022-02-14'
+  AND '2022-02-16';
 -- Get only specific number of meals fx return only 5 meals
 SELECT
   meal.title
 from
   meal
-where
-  price < 95
-ORDER BY
-  meal.title ASC
 LIMIT
   5;
 -- Get the meals that have good reviews
