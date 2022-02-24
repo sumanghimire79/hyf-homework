@@ -6,7 +6,8 @@
     "scripts": {
         "test": "jest --runInBand",
         "start": "node src/backend/server.js",
-        "dev": "nodemon src/backend/server.js"
+        "dev": "nodemon src/backend/server.js",
+        "hello": "echo hello"
     },
     "author": "",
     "license": "ISC",
@@ -18,6 +19,7 @@
     },
     "dependencies": {
         "colors": "^1.4.0",
+        "cors": "^2.8.5",
         "express": "^4.17.1"
     }
 }
