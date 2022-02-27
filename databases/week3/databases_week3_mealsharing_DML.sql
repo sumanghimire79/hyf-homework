@@ -147,28 +147,26 @@ from
 WHERE
   price < 90;
 -- Get meals that still has available reservations
-  -- SELECT
-  --   meal.title,
-  --   max_reservations,
-  --   number_of_guests,(max_reservations - number_of_guests) as 'Available Reservations'
-  -- from
-  --   meal
-  --   JOIN reservation on meal.id = reservation.meal_id
-  -- WHERE
-  --   reservation.number_of_guests < meal.max_reservations;
-  -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
-  -----------------does not work--------------------------
+  ---------------------
 SELECT
-  meal.title,
-  meal.max_reservations,
-  reservation.number_of_guests
+  meal.title AS Meal,
+  meal.max_reservations AS Capacity,
+  SUM(reservation.number_of_guests) AS 'Total Order',
+  meal.max_reservations - sum(reservation.number_of_guests) as Avaliable,
+  reservation.created_date AS 'Reserved Date'
 FROM
   meal
-  JOIN reservation ON meal.id = reservation.meal_id
+  JOIN reservation ON reservation.meal_id = meal.id
 GROUP BY
-  meal.title
+  reservation.meal_id,
+  reservation.created_date
 HAVING
-  SUM(reservation.number_of_guests) < meal.max_reservations;
+  (
+    meal.max_reservations - sum(reservation.number_of_guests)
+  ) > -1 -- how it should not take reservation more than max_reservations? is it JS logic ?
+ORDER BY
+  reservation.created_date DESC;
+--------------
 INSERT INTO
   meal(
     `title`,
