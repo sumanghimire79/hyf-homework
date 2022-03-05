@@ -20,8 +20,8 @@ router.get('/:id', async(request, response) => {
         );
         response.json(findReviewsByID);
     } catch (error) {
-        // throw `${}`;
-        response.end(error); // not working please help
+        throw `${error}`;
+        // response.end(error);
     }
 });
 

@@ -11,22 +11,22 @@ router.get('/', async(request, response) => {
             if (!parseInt(request.query.maxPrice)) {
                 return response.status(400).send('invalid max price');
             }
-            const cheapMeal = meals.filter(
-                (meal) => meal.price < parseInt(request.query.maxPrice),
+            return response.send(
+                meals.filter((meal) => meal.price < parseInt(request.query.maxPrice)),
             );
-            return response.send(cheapMeal);
         }
         if ('title' in request.query) {
-            const mealtitle = meals.filter((meal) =>
-                meal.title.toLowerCase().includes(request.query.title.toLowerCase()),
+            return response.send(
+                meals.filter((meal) =>
+                    meal.title.toLowerCase().includes(request.query.title.toLowerCase()),
+                ),
             );
-            return response.send(mealtitle);
         }
         if ('createdAfter' in request.query) {
             if (!Date.parse(request.query.createdAfter)) {
                 return response.status(400).send('invalide date');
             }
-            response.send(
+            return response.send(
                 meals.filter(
                     (meal) =>
                     Date.parse(meal.createdAt) > Date.parse(request.query.createdAfter),
@@ -42,16 +42,18 @@ router.get('/', async(request, response) => {
                         `Invalid ID, ${request.query.limit} is not a number, provide a number please`,
                     );
             } else if (limit > meals.length || limit <= 0) {
-                return response.status(400).send(`only ${meals.length} meal available`);
+                return response.status(404).send(`${meals.length} meals available`);
             }
-            return response.status(200);
-            // .send(meals.filter((meal) => meal.id <= limit));
-            return response.status(200).send(meals.find({ limit: 5 }));
-            // await meals.find({limit: 5});
+
+            return response
+                .status(200)
+                .send(meals.filter((meal) => meal.id <= limit));
+            // return response.send(meals.filter((meal) => meal.id <= limit));
+            // return response.status(200).send(meals.slice(0, limit));
         }
-        response.json(meals);
+        response.status(200).json(meals);
     } catch (error) {
-        // response.send(error);
+        throw error;
     }
 });
 
@@ -64,11 +66,9 @@ router.get('/:id', async(request, response) => {
         } else if (id > meals.length || id <= 0) {
             return response.send(` only ${meals.length} meals available`);
         }
-        const meal = meals.find((meal) => id === meal.id);
-        response.send(meal);
+        response.json(meals.find((meal) => id === meal.id));
     } catch (error) {
-        // throw `${}`;
-        // response.send(error);
+        throw `${error}`;
     }
 });
 
