@@ -1,0 +1,82 @@
+body {
+  background-color: blue;
+  margin: 0.5rem;
+}
+
+header,
+footer {
+  background-color: red;
+  height: 5rem;
+}
+#mainBody {
+  background-color: aquamarine;
+  padding: 1rem solid white;
+  /* height: 25rem; */
+}
+
+#canvasSection {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  background-color: rosybrown;
+  width: auto;
+}
+#myCanvas1,
+#myCanvas2 {
+  border: 0.1rem solid yellow;
+  margin: 0.5rem;
+  background-color: seagreen;
+
+  width: 98%;
+}
+footer {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+#shoppingCart {
+  background-color: deeppink;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: blue;
+    margin: 0.5rem;
+  }
+
+  header,
+  footer {
+    background-color: red;
+    height: 1rem;
+  }
+  footer {
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+  }
+  #mainBody {
+    background-color: aquamarine;
+    padding: 1rem solid white;
+    /* height: 25rem; */
+  }
+
+  #canvasSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rosybrown;
+    width: auto;
+  }
+  #myCanvas1,
+  #myCanvas2 {
+    border: 1rem solid yellow;
+    margin: 1rem;
+    background-color: seagreen;
+
+    width: 90%;
+  }
+  #shoppingCart {
+    background-color: goldenrod;
+  }
+}

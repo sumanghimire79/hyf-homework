@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HyfBay filter and sor function / Suman Ghimire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+        <nav>
+       <ul>
+           <li><a href="#Home">Home</a></li>
+           <li><a href="#Services">Services</a></li>
+           <li><a href="#About us">About us</a></li>
+           <li><a href="#Contact us">Contact us</a></li>
+    </ul>
+</nav>
+    </header>
+
+
+    <main>
+        <h2>hyfBay - get the okay'est products here</h2>
+        <hr>
+        <input type="text" name="text" id="ProductNameSearchInput" placeholder="Search product by name">
+        <input type="text" name="text" id="ProductPricesearchInput" placeholder="Set max price">
+        <br>
+        <label for="sort"> &nbsp;&nbsp;&nbsp;Sort Product: &nbsp; Name:<input type="radio" name="sort" onclick="sort()"
+                id="namesort">
+            &nbsp;&nbsp;&nbsp;&nbsp; Price:<input type="radio" name="sort" onclick="sort()" id="pricesort">
+            &nbsp;&nbsp;&nbsp;&nbsp; Rating:<input type="radio" name="sort" onclick="sort()" id="ratingsort">
+        </label>
+        
+        <hr>
+
+        <ul id="productDisplayUL">
+        </ul>
+    </main>
+    <footer> © 2021 hyfBay - Online Product. All Rights Reserved. </footer>
+    <script src="hyfBayHelpers.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
