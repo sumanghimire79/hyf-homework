@@ -1,10 +1,15 @@
 .App {
   text-align: left;
   background-color: red;
+}
+
+.todoDiv {
   display: flex;
   align-items: center;
 }
-
+.TodoItemHeader {
+  background-color: antiquewhite;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -29,10 +34,12 @@
 h1 {
   background-color: green;
 }
+li {
+  border: 1px solid yellow;
+}
 ul {
-  /* list-style-type: square; */
-  list-style: '*';
-  /* list-style-type: armenian; */
+  list-style: '*  ';
+  border: 2px solid blue;
 }
 
 .App-link {
