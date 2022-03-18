@@ -6,7 +6,8 @@ const Todolist = (props) => {
     <div>
       <ul>
         {props.TodoData.map((list) => {
-          return <TodoItem job={list.job} date={list.date} />;
+          const TodoItem = <TodoItem job={list.job} date={list.date} />;
+          return TodoItem;
         })}
       </ul>
     </div>
