@@ -2,15 +2,15 @@ import { TodosArray, NewTodosArray } from './TodoData';
 import React, { useState } from 'react';
 
 function TodosMethods() {
-  const [useTodo, setUseTodo] = useState(TodosArray);
+  const [todos, setTodos] = useState(TodosArray);
 
   //TodoList
-  const TodoList = useTodo.map((todos) => (
+  const TodoList = todos.map((todo) => (
     <TodoItem
-      description={todos.description}
-      checked={todos.checked}
-      id={todos.id}
-      key={todos.id}
+      description={todo.description}
+      checked={todo.checked}
+      id={todo.id}
+      key={todo.id}
     />
   ));
   console.log(TodoList);
@@ -30,16 +30,16 @@ function TodosMethods() {
   //add a randomTodo
   function AddRandomTodo() {
     let randomID;
-    if (useTodo.length === 0) {
+    if (todos.length === 0) {
       randomID = 1;
     } else {
-      randomID = useTodo[useTodo.length - 1].id + 1;
+      randomID = todos[todos.length - 1].id + 1;
     }
     const randomTodo = {
       id: randomID,
       ...NewTodosArray[Math.floor(Math.random() * NewTodosArray.length)],
     };
-    const AddedListWithRandomTodo = setUseTodo((todosList) => [
+    const AddedListWithRandomTodo = setTodos((todosList) => [
       ...todosList,
       randomTodo,
     ]);
@@ -48,25 +48,25 @@ function TodosMethods() {
 
   //Delete a Todo
   function DeleteTodo(id) {
-    setUseTodo((prevTodos) => {
+    setTodos((prevTodos) => {
       const ListAfterDelete = prevTodos.filter((todo) => todo.id !== id);
       console.log(ListAfterDelete);
       return ListAfterDelete;
     });
   }
 
-  //Strike through Todos
+  //Strike through todos
   function MarkTodo(id) {
-    var strikeThroughList = [...useTodo];
+    var strikeThroughList = [...todos];
     strikeThroughList.forEach((item) => {
       if (item.id === id) {
         item.checked = !item.checked;
       }
     });
-    setUseTodo(strikeThroughList);
+    setTodos(strikeThroughList);
   }
 
-  return useTodo && useTodo.length > 0 ? (
+  return todos && todos.length > 0 ? (
     <div className="TodoList">
       <button onClick={AddRandomTodo}> Add Todo </button>
       {TodoList}
