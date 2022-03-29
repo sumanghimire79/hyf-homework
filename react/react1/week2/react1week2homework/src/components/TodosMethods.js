@@ -1,32 +1,10 @@
 import { TodosArray, NewTodosArray } from './TodoData';
 import React, { useState } from 'react';
+import { TodoItem } from './TodoItem';
 
 function TodosMethods() {
   const [todos, setTodos] = useState(TodosArray);
 
-  //TodoList
-  const TodoList = todos.map((todo) => (
-    <TodoItem
-      description={todo.description}
-      checked={todo.checked}
-      id={todo.id}
-      key={todo.id}
-    />
-  ));
-  console.log(TodoList);
-
-  //todoItem
-  function TodoItem({ description, checked, id }) {
-    return (
-      <li>
-        <span className={checked ? 'checked' : 'unchecked'}>{description}</span>
-        <span>
-          <input type="checkbox" onChange={() => MarkTodo(id)}></input>
-          <button onClick={() => DeleteTodo(id)}>Delete</button>
-        </span>
-      </li>
-    );
-  }
   //add a randomTodo
   function AddRandomTodo() {
     let randomID;
@@ -45,6 +23,19 @@ function TodosMethods() {
     ]);
     return AddedListWithRandomTodo;
   }
+
+  //TodoList
+  const TodoList = todos.map((todo) => (
+    <TodoItem
+      description={todo.description}
+      checked={todo.checked}
+      id={todo.id}
+      key={todo.id}
+      MarkTodo={MarkTodo}
+      DeleteTodo={DeleteTodo}
+    />
+  ));
+  console.log(TodoList);
 
   //Delete a Todo
   function DeleteTodo(id) {
