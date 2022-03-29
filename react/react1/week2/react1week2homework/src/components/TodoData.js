@@ -1,4 +1,4 @@
-export const TodosArray = [
+export const todosArray = [
   {
     id: 1,
     description: 'Get out of bed',
@@ -16,7 +16,7 @@ export const TodosArray = [
   },
 ];
 
-export const NewTodosArray = [
+export const randomTodosArray = [
   {
     description: 'got to bed',
   },

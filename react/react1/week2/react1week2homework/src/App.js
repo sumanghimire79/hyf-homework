@@ -1,13 +1,15 @@
 import './App.css';
+import './components/css.css';
 import { Counter } from './components/Counter';
-import TodosMethods from './components/TodosMethods';
-// import AddRandomTodo from './components/AddRandomTodo';
+import TodosMain from './components/TodosMain';
+import { TodosHeader } from './components/TodosHeader';
+
 function App() {
   return (
     <div className="App">
       <Counter />
-      <h1>ToDo List</h1>
-      <TodosMethods />
+      <TodosHeader />
+      <TodosMain />
     </div>
   );
 }

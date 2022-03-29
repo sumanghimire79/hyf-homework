@@ -1,18 +1,14 @@
 import '../App.css';
-export function TodoItem({ description, checked, id, MarkTodo, DeleteTodo }) {
-  function TodoMark() {
-    MarkTodo(id);
-  }
-  function TodoDelete() {
-    DeleteTodo(id);
-  }
+export function TodoItem({ description, checked, id, markTodo, deleteTodo }) {
   return (
-    <li>
-      <span className={checked ? 'checked' : 'unchecked'}>
-        {description}
-        <input type="checkbox" onChange={TodoMark}></input>
-      </span>
-      <button onClick={TodoDelete}>Delete</button>
-    </li>
+    <div>
+      <li>
+        <span className={checked ? 'checked' : 'unchecked'}>
+          {description}
+          <input type="checkbox" onChange={() => markTodo(id)}></input>
+        </span>
+        <button onClick={() => deleteTodo(id)}>Delete</button>
+      </li>
+    </div>
   );
 }
