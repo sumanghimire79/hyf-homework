@@ -1,7 +1,7 @@
 import './App.css';
 import './components/css.css';
 import { Counter } from './components/Counter';
-import TodosMain from './components/TodosMain';
+import TodoList from './components/TodoList';
 import { TodosHeader } from './components/TodosHeader';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Counter />
       <TodosHeader />
-      <TodosMain />
+      <TodoList />
     </div>
   );
 }

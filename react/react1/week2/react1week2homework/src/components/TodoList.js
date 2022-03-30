@@ -2,7 +2,7 @@ import { todosArray, randomTodosArray } from './TodoData';
 import React, { useState } from 'react';
 import { TodoItem } from './TodoItem';
 
-function TodosMain() {
+function TodoList() {
   const [todos, setTodos] = useState(todosArray);
 
   //add a randomTodo
@@ -25,7 +25,7 @@ function TodosMain() {
   }
 
   //todoList
-  const todoList = todos.map((todo) => (
+  const todoItem = todos.map((todo) => (
     <TodoItem
       description={todo.description}
       checked={todo.checked}
@@ -58,19 +58,19 @@ function TodosMain() {
   if (todos && todos.length > 0) {
     return (
       <div className="todoList">
-        <button onClick={() => addRandomTodo()}> Add Todo </button>
-        {/* <button onClick={addRandomTodo}> Add Todo </button> ** both way works. what is the difference in this function call. But in props/callback must use ()=>  */}
-        {todoList}
+        <button onClick={addRandomTodo}> Add Todo </button>
+
+        {todoItem}
       </div>
     );
   } else {
     return (
       <div>
-        <button onClick={() => addRandomTodo()}> Add Todo </button>
+        <button onClick={addRandomTodo}> Add Todo </button>
         <span> No more item left</span>
       </div>
     );
   }
 }
 
-export default TodosMain;
+export default TodoList;
