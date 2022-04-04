@@ -20,8 +20,8 @@ export const TodoList = () => {
     return setFetchTodo([...fetchTodo, { id: newID, description, deadline }]);
   };
 
-  //todo item
-  const todoItem = () => {
+  //todo List
+  const todoList = () => {
     return fetchTodo.map((inputTodo) => {
       return (
         <TodoItem
@@ -67,7 +67,7 @@ export const TodoList = () => {
       <input type="date" onChange={(e) => setDeadline(e.target.value)}></input>
       <button onClick={addTodo}>Add todo</button>
       <h1> List of Todos</h1>
-      <section className="todolist"> {todoItem()}</section>
+      <section className="todolist"> {todoList()}</section>
     </div>
   );
 };
