@@ -1,0 +1,22 @@
+.submitShift,
+.ViewShif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue;
+}
+
+.ViewShiftUl {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  background-color: brown;
+}
+
+.ViewShiftUl li {
+  list-style-type: none;
+}
+.checked {
+  text-decoration: line-through;
+}
