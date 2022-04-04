@@ -25,7 +25,7 @@ function TodoList() {
   }
 
   //todoList
-  const todoItem = todos.map((todo) => (
+  const todoList = todos.map((todo) => (
     <TodoItem
       description={todo.description}
       checked={todo.checked}
@@ -60,7 +60,7 @@ function TodoList() {
       <div className="todoList">
         <button onClick={addRandomTodo}> Add Todo </button>
 
-        {todoItem}
+        {todoList}
       </div>
     );
   } else {
