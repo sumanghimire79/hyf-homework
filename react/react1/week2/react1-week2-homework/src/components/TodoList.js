@@ -55,22 +55,17 @@ function TodoList() {
     setTodos(todosForLineThrough);
   }
 
-  if (todos && todos.length > 0) {
-    return (
-      <div className="todoList">
-        <button onClick={addRandomTodo}> Add Todo </button>
-
-        {todoList}
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <button onClick={addRandomTodo}> Add Todo </button>
-        <span> No more item left</span>
-      </div>
-    );
-  }
+  return todos.length > 0 ? (
+    <div className="todoList">
+      <button onClick={addRandomTodo}> Add Todo </button>
+      {todoList}
+    </div>
+  ) : (
+    <div>
+      <button onClick={addRandomTodo}> Add Todo </button>
+      <span> No more item left</span>
+    </div>
+  );
 }
 
 export default TodoList;
