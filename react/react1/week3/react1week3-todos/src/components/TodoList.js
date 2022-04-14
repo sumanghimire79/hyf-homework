@@ -1,13 +1,27 @@
 // Todolist
-
-import { DataFetch } from './DataFetch';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TodoItem } from './TodoItem';
+
+const Api =
+  'https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw';
 
 export const TodoList = () => {
   const [fetchTodo, setFetchTodo] = useState([]);
   const [description, setDescription] = useState('');
   const [deadline, setDeadline] = useState('');
+
+  useEffect(() => {
+    fetch(Api)
+      .then((res) => res.json())
+      .then((data) => {
+        const result = data.map((todo) => ({
+          id: todo.id,
+          description: todo.description,
+          deadline: todo.deadline,
+        }));
+        setFetchTodo((prev) => [...prev, ...result]);
+      });
+  }, [setFetchTodo]);
 
   //add Todo
   const addTodo = () => {
@@ -46,7 +60,6 @@ export const TodoList = () => {
 
   // update todo
   const updateTodo = (id, description) => {
-    console.log(id, description);
     const listAfterUpdate = [...fetchTodo].map((todo) => {
       if (todo.id === id) {
         todo.description = description;
@@ -59,7 +72,7 @@ export const TodoList = () => {
   return (
     <div>
       <h1> All about Todos </h1>
-      <DataFetch setFetchTodo={setFetchTodo} />
+
       <input
         type="text"
         onChange={(e) => setDescription(e.target.value)}

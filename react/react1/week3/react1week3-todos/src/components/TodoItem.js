@@ -32,7 +32,6 @@ export const TodoItem = ({
   //input fild allows added text input
   const updateInputText = (e) => {
     const value = e.target.value;
-    console.log(value);
     setUpdateInput(value);
   };
 
