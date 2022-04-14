@@ -16,6 +16,8 @@ export function DataFetch() {
     fetch(Api)
       .then((res) => res.json())
       .then((data) => {
+        console.log('data??', data.message);
+
         if (query.length === 0) {
           setUserFetched([]);
         } else {
@@ -31,7 +33,8 @@ export function DataFetch() {
       })
       .catch((error) => {
         console.log(` error is ${error}`);
-        setErrorMessage(`  ${error}`);
+
+        setErrorMessage(` ${error}`);
       });
   }, [Api, query.length]);
 
@@ -40,12 +43,19 @@ export function DataFetch() {
 
   return (
     <div>
-      {isLoading ? (
+      {/* {isLoading ? (
         'Loading....'
       ) : (
         <div> {userFetched.length === 0 ? ' no items' : userFetched}</div>
+      )} */}
+
+      {isLoading && <p> Loading....</p>}
+
+      {errorMessage ? (
+        errorMessage
+      ) : (
+        <div> {userFetched.length === 0 ? ' no items' : userFetched}</div>
       )}
-      {errorMessage ? errorMessage : userFetched}
     </div>
   );
 }
