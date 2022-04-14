@@ -14,8 +14,22 @@ export function InputShift() {
   const [dataFechingState, setDataFechingState] = useState(false);
 
   function addShift() {
-    const addedShift = [...inputShift, { name, start, end }];
-    setInputShift(addedShift);
+    const startEntry = start.split(':');
+    const startMinutes = Number(startEntry[0]) * 60 + Number(startEntry[1]);
+    const endEntry = end.split(':');
+    const endMinutes = Number(endEntry[0]) * 60 + Number(endEntry[1]);
+    const totalMinutes = endMinutes - startMinutes;
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    if (hours > 0 || minutes > 0) {
+      const addedShift = [...inputShift, { name, start, end }];
+      setInputShift(addedShift);
+      alert('shift saved');
+    } else {
+      setInputShift(inputShift);
+      alert('check the time');
+    }
   }
 
   function deleteShift(name) {
@@ -62,7 +76,6 @@ export function InputShift() {
           type="submit"
           onClick={() => {
             addShift();
-            alert('shift saved');
           }}
         >
           Save Shift
