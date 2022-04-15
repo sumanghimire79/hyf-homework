@@ -1,0 +1,57 @@
+[{
+        "id": 1,
+        "title": "Indian food in the summer",
+        "maxNumberOfGuests": 5,
+        "description": "A nice night out eating delicious indian food",
+        "createdAt": "2019/09/07",
+        "price": 50
+    },
+    {
+        "id": 2,
+        "title": "nepali food ",
+        "maxNumberOfGuests": 4,
+        "description": "A nice night out eating delicious indian food",
+        "createdAt": "2019-12-07",
+        "price": 80
+    },
+    {
+        "id": 3,
+        "title": "chinese food",
+        "maxNumberOfGuests": 6,
+        "description": "delicious chinese food",
+        "createdAt": "2019-11-07",
+        "price": 60
+    },
+    {
+        "id": 4,
+        "title": "danish food",
+        "maxNumberOfGuests": 6,
+        "description": "delicious danish food",
+        "createdAt": "2019-10-07",
+        "price": 65
+    },
+    {
+        "id": 5,
+        "title": "african food",
+        "maxNumberOfGuests": 6,
+        "description": "delicious african food",
+        "createdAt": "2019-11-07",
+        "price": 60
+    },
+    {
+        "id": 6,
+        "title": "mexican food",
+        "maxNumberOfGuests": 15,
+        "description": "delicious mexican food",
+        "createdAt": "2019-11-07",
+        "price": 66
+    },
+    {
+        "id": 7,
+        "title": "mix food",
+        "maxNumberOfGuests": 10,
+        "description": "delicious mix food",
+        "createdAt": "2019-11-07",
+        "price": 60
+    }
+]
