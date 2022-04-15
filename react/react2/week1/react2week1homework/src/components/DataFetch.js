@@ -5,39 +5,46 @@ export function DataFetch() {
   const UseContext = useContext(SearchContext);
   const query = UseContext.searchInput;
 
-  const [isLoading, SetIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [userFetched, setUserFetched] = useState([]);
   const [errorHandling, setErrorHandling] = useState();
 
-  const Api = `https://api.github.com/search/users?q=${query}`;
+  const api = `https://api.github.com/search/users?q=${query}`;
   useEffect(() => {
-    if (!Api) {
+    if (query.length === 0) {
       setUserFetched([]);
-      // return;
+      setErrorHandling();
+      return;
     }
-    SetIsLoading(true);
+
+    setIsLoading(true);
     (async () => {
       try {
-        const api = await fetch(Api);
-        const jsonData = await api.json();
-        const fetchMap = jsonData.items.map((data) => data.login);
-        setUserFetched(fetchMap);
+        const responce = await fetch(api);
+        const jsonData = await responce.json();
+        if (responce.ok) {
+          const fetchMap = jsonData.items.map((data) => data.login);
+          setUserFetched(fetchMap);
+          setErrorHandling();
+        } else {
+          setErrorHandling(jsonData.message);
+          setUserFetched([]);
+        }
       } catch (err) {
-        // throw err;
         setErrorHandling(err);
-        console.log(errorHandling);
       } finally {
-        SetIsLoading(false);
+        setIsLoading(false);
       }
     })();
-  }, [Api, query]);
+  }, [api, query]);
 
   const item = userFetched.map((user, index) => <li key={index}>{user}</li>);
-  return (
-    <div>
-      {isLoading && <p> Loading....</p>}
-      {/* {errorHandling} */}
-      <div>{userFetched.length === 0 ? ' no items' : item}</div>
-    </div>
-  );
+
+  if (isLoading) {
+    return <p>loading...</p>;
+  }
+  if (errorHandling) {
+    return <p> {errorHandling} </p>;
+  }
+  return <div>{userFetched.length === 0 ? ' no items' : item}</div>;
 }
