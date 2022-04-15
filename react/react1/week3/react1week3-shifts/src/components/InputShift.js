@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ViewShiftList } from './ViewShiftList';
 import { SearchShift } from './SearchShift';
 
-import { DataDefaultShiftApi } from './DataDefaultShiftApi';
+const Api =
+  'https://gist.githubusercontent.com/benna100/5fd674171ea528d7cd1d504e9bb0ca6f/raw';
 
 export function InputShift() {
   const [inputShift, setInputShift] = useState([]);
-
   const [name, setName] = useState('');
   const [start, setStartTime] = useState('');
   const [end, setEndTime] = useState('');
   const [searchName, setSearchName] = useState('');
   const [dataFechingState, setDataFechingState] = useState(false);
+
+  useEffect(() => {
+    if (setInputShift) {
+      fetch(Api)
+        .then((res) => res.json())
+        .then((data) => {
+          const fetchMap = data.map((data) => ({
+            name: data.name,
+            start: data.start.split('T')[1],
+            end: data.end.split('T')[1],
+          }));
+          setInputShift(fetchMap);
+          setDataFechingState(true);
+        });
+    }
+  }, [setInputShift]);
 
   function addShift() {
     const startEntry = start.split(':');
@@ -27,7 +43,6 @@ export function InputShift() {
       setInputShift(addedShift);
       alert('shift saved');
     } else {
-      setInputShift(inputShift);
       alert('check the time');
     }
   }
@@ -41,18 +56,17 @@ export function InputShift() {
 
   const shifts = inputShift
     .filter((val) => val.name.toLowerCase().includes(searchName.toLowerCase()))
-    .map((item) => {
+    .map((item, index) => {
       return (
         <ViewShiftList
           name={item.name}
           start={item.start}
           end={item.end}
-          key={item.name}
+          key={item.index}
           deleteShift={deleteShift}
         />
       );
     });
-  console.log(inputShift);
 
   return (
     <div>
@@ -88,10 +102,6 @@ export function InputShift() {
 
         {!dataFechingState ? 'loading...' : null}
         {shifts}
-        <DataDefaultShiftApi
-          setDataFechingState={setDataFechingState}
-          setInputShift={setInputShift}
-        />
       </div>
     </div>
   );
