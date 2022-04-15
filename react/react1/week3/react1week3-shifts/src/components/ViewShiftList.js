@@ -1,7 +1,6 @@
 import React from 'react';
 
-export function ViewShiftList({ name, start, end, deleteShift }) {
-  console.log(start);
+export function ViewShiftList({ name, id, start, end, deleteShift }) {
   const startEntry = start.split(':');
   const startMinutes = Number(startEntry[0]) * 60 + Number(startEntry[1]);
   const endEntry = end.split(':');
@@ -37,7 +36,7 @@ export function ViewShiftList({ name, start, end, deleteShift }) {
           {` (${workingTime})`}
         </li>
         <li>
-          <button onClick={() => deleteShift(name)}>delete shift</button>
+          <button onClick={() => deleteShift(id)}>delete shift</button>
         </li>
       </ul>
     </div>

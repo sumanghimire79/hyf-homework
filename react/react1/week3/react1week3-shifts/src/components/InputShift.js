@@ -18,7 +18,8 @@ export function InputShift() {
       fetch(Api)
         .then((res) => res.json())
         .then((data) => {
-          const fetchMap = data.map((data) => ({
+          const fetchMap = data.map((data, index) => ({
+            id: index,
             name: data.name,
             start: data.start.split('T')[1],
             end: data.end.split('T')[1],
@@ -38,31 +39,39 @@ export function InputShift() {
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
 
+    //  to automatically add id : find the highest id and add 1 to that
+    let id;
+    if (inputShift.length === 0) {
+      id = 1;
+    } else {
+      id = inputShift[inputShift.length - 1].id + 1;
+    }
     if (hours > 0 || minutes > 0) {
-      const addedShift = [...inputShift, { name, start, end }];
+      const addedShift = [...inputShift, { id, name, start, end }];
       setInputShift(addedShift);
       alert('shift saved');
     } else {
       alert('check the time');
     }
   }
-
-  function deleteShift(name) {
+  console.log(inputShift);
+  function deleteShift(id) {
     setInputShift((shifts) => {
-      const shiftsAfterDelete = shifts.filter((shift) => shift.name !== name);
+      const shiftsAfterDelete = shifts.filter((shift) => shift.id !== id);
       return shiftsAfterDelete;
     });
   }
 
   const shifts = inputShift
     .filter((val) => val.name.toLowerCase().includes(searchName.toLowerCase()))
-    .map((item, index) => {
+    .map((item) => {
       return (
         <ViewShiftList
           name={item.name}
           start={item.start}
           end={item.end}
-          key={item.index}
+          key={item.id}
+          id={item.id}
           deleteShift={deleteShift}
         />
       );
@@ -97,6 +106,7 @@ export function InputShift() {
       </div>
       <div>
         <h4>Search Shift</h4>
+
         <SearchShift setSearchName={setSearchName} />
         <h4>ViewShift</h4>
 
