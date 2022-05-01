@@ -1,5 +1,7 @@
 1.potato
 2.bringle
-3.spinatch
+3.latte
 4.soyabean
 5.bitterguard
+6.ladysfinger
+7.bean
