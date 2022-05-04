@@ -1,10 +1,7 @@
 1.potato
 2.bringle
-<<<<<<< HEAD
 3.latte
-=======
 3.latte edited from git hub
->>>>>>> 6a51a27b329fb94a6f247c0951f346f727130d2e
 4.soyabean
 5.bitterguard
 6.ladysfinger
