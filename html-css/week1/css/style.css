@@ -194,3 +194,9 @@ footer {
     padding-top: 10px;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 1225px) {
+  body {
+    background: linear-gradient(to right, #22577A, #80ED99);
+  }
+}
